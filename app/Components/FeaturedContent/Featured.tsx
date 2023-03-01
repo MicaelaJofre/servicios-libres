@@ -11,7 +11,15 @@ const Featured = () => {
 
   return (
     <div className='w-full align-center rounded-3xl justify-center flex overflow-hidden'>
-      {ads.length > 0 ? <AdBanner img={randomElement(ads)} /> : <AppBanner />}
+      {ads.length > 0 
+        ? <AdBanner img={randomElement(ads)} /> 
+        : <AppBanner 
+          title='Super saver week' 
+          img='/images/woman-cleaning.png' 
+          link={{ url: '/', text: 'Grab now'}}
+          subtitle='Flat 40% OFF' 
+          description='For every cleaning'
+        />}
     </div>
   )
 }
