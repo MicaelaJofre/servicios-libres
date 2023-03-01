@@ -31,4 +31,5 @@ input {
 
 input::placeholder {
   color: #ccc;
+  font-size: .8em;
 }
