@@ -24,3 +24,11 @@ a {
 svg {
   cursor: pointer;
 }
+
+input {
+  outline: none;
+}
+
+input::placeholder {
+  color: #ccc;
+}
