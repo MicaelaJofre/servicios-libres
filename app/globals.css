@@ -30,6 +30,6 @@ input {
 }
 
 input::placeholder {
-  color: #ccc;
+  color: #ddd;
   font-size: .8em;
 }
