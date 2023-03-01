@@ -1,5 +1,5 @@
 import Avatar from './Components/Avatar'
-import MenuIcon from './Components/Icons/MenuIcon'
+import LocationIcon from './Components/Icons/Location'
 import Notifications from './Components/Notifications'
 import './globals.css'
 
@@ -15,12 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className="h-full max-w-md w-full bg-gray-100 rounded-xl mx-auto p-4 flex flex-col gap-2">
+      <body className="h-full max-w-md w-full bg-gray-100 rounded-xl mx-auto p-4 flex flex-col gap-4">
         <header className='w-full flex justify-between items-center'>
           <Avatar img='/images/avatar-placeholder.png' text='Logueate...' />
           <nav className='flex gap-2'>
             <Notifications />
-            <MenuIcon color='#888'/>
+            <LocationIcon width={20} height={20} color='#888'/>
           </nav>
         </header>
         {children}

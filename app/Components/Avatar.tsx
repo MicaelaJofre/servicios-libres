@@ -7,12 +7,12 @@ type Props = {
 
 const Avatar = ({ img, text }: Props) => {
   return (
-    <div className="flex gap-2 p-2">
-      <div className="rounded-full border flex items-center justify-center p-1 cursor-pointer">
-        <Image className="rounded-full" src={img} alt='profile-image' width={48} height={48}></Image>
+    <div className="flex gap-2">
+      <div className="rounded-2xl border flex items-center justify-center p-0.5 cursor-pointer">
+        <Image className="rounded-2xl" src={img} alt='profile-image' width={54} height={54}></Image>
       </div>
       <div className="flex flex-col justify-center">
-        <p className="text-gray-300 text-sm leading-3">¡Bienvenido!</p>
+        <p className="text-gray-300 text-xs leading-3">¡Bienvenido!</p>
         <p className="font-semibold">{text}</p>
       </div>
     </div>

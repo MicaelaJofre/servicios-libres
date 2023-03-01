@@ -3,7 +3,7 @@ import SearchBar from "./Components/SearchBar";
 
 export default function Home() {
   return (
-    <main>
+    <main className="flex flex-col gap-4">
       <SearchBar />
       <Featured />
     </main>
