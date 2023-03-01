@@ -1,26 +1,20 @@
 type Props = {
-  color: string
+  color: string,
+  width: number,
+  height: number
 }
 
-const LensIcon = ({ color }: Props) => (
+const LensIcon = ({ color, width, height }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={28}
-    height={28}
-    viewBox="0 0 24 24"
-    fill='none'
+    viewBox="0 0 250 250"
+    shapeRendering="geometricPrecision"
+    textRendering="geometricPrecision"
+    width={width}
+    height={height}
+    fill={color}
   >
-    <path
-      d="M19.96 11.48a8.45 8.45 0 0 1-2.458 5.971 8.438 8.438 0 0 1-6.022 2.51 8.48 8.48 0 1 1 8.48-8.48Z"
-      stroke={color}
-      strokeWidth={2}
-    />
-    <path
-      d="m18.155 18.155 3.732 3.732"
-      stroke={color}
-      strokeWidth={2}
-      strokeLinecap="round"
-    />
+    <path d="M3 109.646C3 50.747 50.747 3 109.646 3s106.647 47.747 106.647 106.646c0 24.482-8.25 47.038-22.12 65.038l47.687 47.687c10.853 10.853-5.603 27.31-16.457 16.457l-47.356-47.356c-18.515 15.494-42.369 24.82-68.4 24.82C50.746 216.293 3 168.547 3 109.647Zm106.646 83.8c46.281 0 83.8-37.519 83.8-83.8s-37.519-83.799-83.8-83.799-83.799 37.518-83.799 83.8 37.518 83.799 83.8 83.799Z" />
   </svg>
 )
 

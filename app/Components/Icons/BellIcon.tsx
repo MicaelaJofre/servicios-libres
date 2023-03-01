@@ -1,16 +1,20 @@
 type Props = {
-  color: string
+  color: string,
+  width: number,
+  height: number
 }
-
-const BellIcon = ({ color }: Props) => (
+const BellIcon = ({ color, width, height }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={28}
-    height={28}
-    viewBox="0 0 24 24"
+    viewBox="0 0 250 250"
+    shapeRendering="geometricPrecision"
+    textRendering="geometricPrecision"
     fill={color}
+    width={width}
+    height={height}
   >
-    <path d="M21 19v1H3v-1l2-2v-6c0-3.1 2.03-5.83 5-6.71V4a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.29c2.97.88 5 3.61 5 6.71v6l2 2m-7 2a2 2 0 0 1-2 2 2 2 0 0 1-2-2" />
+    <path d="M41.829 101.094C41.829 45.261 79.066 0 125 0s83.171 45.261 83.171 101.094S307.221 202.188 125 202.188s-83.171-45.261-83.171-101.094Z" />
+    <circle transform="matrix(.84706 0 0 .84706 125 228.775)" r={25.057} />
   </svg>
 )
 
