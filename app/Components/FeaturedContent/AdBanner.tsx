@@ -6,9 +6,7 @@ type Props = {
 
 const AdBanner = ({ img }: Props) => {
   return (
-    <div>
-      <Image src={img} alt='publicity-banner' width={400} height={250} />
-    </div>
+    <Image className="h-auto" src={img} alt='publicity-banner' width={450} height={250} />
   )
 }
 
