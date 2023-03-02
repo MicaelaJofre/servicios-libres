@@ -33,3 +33,8 @@ input::placeholder {
   color: #ddd;
   font-size: .8em;
 }
+
+h2 {
+  font-weight: 700;
+  font-size: 1.2em;
+}
