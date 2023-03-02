@@ -1,15 +1,12 @@
-type Props = {
-  color: string,
-  width: number,
-  height: number
-}
-const BellIcon = ({ color, width, height }: Props) => (
+import { IconProps } from "./IconTypes"
+
+const BellIcon = ({ color, width, height }: IconProps) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 250 250"
     shapeRendering="geometricPrecision"
     textRendering="geometricPrecision"
-    fill={color}
+    fill={color.firstColor}
     width={width}
     height={height}
   >
