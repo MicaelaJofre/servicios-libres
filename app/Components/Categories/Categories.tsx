@@ -1,14 +1,38 @@
 'use client'
 
+import Link from "next/link"
 import { useState } from "react"
 import Electrician from "../Icons/ElectricianIcon"
 import PaintIcon from "../Icons/PaintIcon"
 import Category from "./Category"
+import FeaturedWorker from "./FeaturedWorker"
 
 const categories = [
   {
     name: "limpieza",
     svg: Electrician,
+    featured: [
+      {
+        name: 'Liya James',
+        image: '/images/workers/liya-james.jpeg',
+        verified: true,
+        rate: {
+          average: 4.6,
+          quantity: 824
+        },
+        price: 32
+      },
+      {
+        name: 'James Winston',
+        image: '/images/workers/james-winston.jpeg',
+        verified: true,
+        rate: {
+          average: 3.2,
+          quantity: 126
+        },
+        price: 45
+      }
+    ]
   },
   {
     name: "plomería",
@@ -35,15 +59,30 @@ const Categories = () => {
     setSelectedCategory(name)
   }
   return (
-    <section className="flex flex-col gap-6">
-      <h2>Categorías</h2>
-      <div className="w-[10000px]">
-        <div className="flex gap-4 w-fit first:m-0">
-          {categories.map(({ name, svg }, index) => <Category key={'category-' + name} id={index} name={name} active={name === selectedCategory} SvgComponent={svg} handleCategory={handleCategory}/>)}
+    <>
+      <section className="flex flex-col gap-6">
+        <h2>Categorías</h2>
+        <div className="w-[10000px]">
+          <div className="flex gap-4 w-fit first:m-0">
+            {categories.map(({ name, svg }, index) => <Category key={'category-' + name} id={index} name={name} active={name === selectedCategory} SvgComponent={svg} handleCategory={handleCategory}/>)}
+          </div>
         </div>
-      </div>
-
-    </section>
+      </section>
+      <section className="flex flex-col gap-6">
+        <div className="flex justify-between align-bottom">
+          <h2>Mejores en {selectedCategory}</h2>
+          <Link className="text-sm font-semibold flex items-center text-[#FFC37B]" href={`/services/${selectedCategory}`}>Ver todo</Link>
+        </div>
+        <div className="w-[10000px]">
+          <div className="flex gap-6">
+            {categories
+              .find(({ name }) => name === selectedCategory)
+              ?.featured
+              ?.map((worker) => <FeaturedWorker key={worker.name + '-featured'} {...worker} />)}
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
 

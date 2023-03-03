@@ -9,6 +9,10 @@ module.exports = {
     extend: {
       backgroundImage: {
         'orange-gradient': "linear-gradient(to right, #FF6A76, #FFC37B)",
+      },
+      colors: {
+        'orange-light': "#FFC37B",
+        'orange-dark': "#FF6A76"
       }
     },
   },
