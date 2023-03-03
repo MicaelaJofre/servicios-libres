@@ -1,4 +1,4 @@
-import { IconProps } from "./IconTypes"
+import { IconProps } from './IconTypes'
 
 const LensIcon = ({ color, width, height }: IconProps) => (
   <svg
