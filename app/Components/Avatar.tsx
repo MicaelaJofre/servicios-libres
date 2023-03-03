@@ -1,7 +1,7 @@
-import Image from "next/image"
+import Image from 'next/image'
 
 type Props = {
-  img: string,
+  img: string
   text: string
 }
 
@@ -9,7 +9,13 @@ const Avatar = ({ img, text }: Props) => {
   return (
     <div className="flex gap-2">
       <div className="rounded-2xl border flex items-center justify-center p-0.5 cursor-pointer">
-        <Image className="rounded-2xl" src={img} alt='profile-image' width={54} height={54}></Image>
+        <Image
+          className="rounded-2xl"
+          src={img}
+          alt="profile-image"
+          width={54}
+          height={54}
+        ></Image>
       </div>
       <div className="flex flex-col justify-center">
         <p className="text-gray-300 text-xs leading-3">¡Bienvenido!</p>

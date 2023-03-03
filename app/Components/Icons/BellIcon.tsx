@@ -1,4 +1,4 @@
-import { IconProps } from "./IconTypes"
+import { IconProps } from './IconTypes'
 
 const BellIcon = ({ color, width, height }: IconProps) => (
   <svg
