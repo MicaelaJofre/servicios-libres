@@ -1,12 +1,14 @@
 'use client'
 
+import { useState } from "react"
 import Electrician from "../Icons/ElectricianIcon"
+import PaintIcon from "../Icons/PaintIcon"
 import Category from "./Category"
 
 const categories = [
   {
     name: "limpieza",
-    svg: Electrician
+    svg: Electrician,
   },
   {
     name: "plomería",
@@ -18,7 +20,7 @@ const categories = [
   },
   {
     name: "pintura",
-    svg: Electrician
+    svg: PaintIcon
   },
   {
     name: "belleza",
@@ -27,16 +29,17 @@ const categories = [
 ]
 
 const Categories = () => {
+  const [selectedCategory, setSelectedCategory] = useState('limpieza')
 
   const handleCategory = (name: string) => {
-    console.log(name)
+    setSelectedCategory(name)
   }
   return (
     <section className="flex flex-col gap-6">
       <h2>Categorías</h2>
       <div className="w-[10000px]">
         <div className="flex gap-4 w-fit first:m-0">
-          {categories.map(({ name, svg }) => <Category key={'category-' + name} name={name} SvgComponent={svg} handleCategory={handleCategory}/>)}
+          {categories.map(({ name, svg }) => <Category key={'category-' + name} name={name} active={name === selectedCategory} SvgComponent={svg} handleCategory={handleCategory}/>)}
         </div>
       </div>
 
