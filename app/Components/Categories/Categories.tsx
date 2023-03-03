@@ -36,7 +36,29 @@ const categories = [
   },
   {
     name: "plomería",
-    svg: Electrician
+    svg: Electrician,
+    featured: [
+      {
+        name: 'Tinna Turner',
+        image: '/images/workers/martina-lopez.jpg',
+        verified: false,
+        rate: {
+          average: 3.6,
+          quantity: 24
+        },
+        price: 45
+      },
+      {
+        name: 'Alicia Strumer',
+        image: '/images/workers/liya-james.jpeg',
+        verified: true,
+        rate: {
+          average: 0.6,
+          quantity: 1050
+        },
+        price: 108
+      }
+    ]
   },
   {
     name: "electricidad",

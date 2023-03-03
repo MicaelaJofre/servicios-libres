@@ -49,11 +49,13 @@ const FeaturedWorker = ({ name, verified, image, rate, price }: Props) => {
         </div>
         <div className="w-[185px] bg-[#FDFCFD] rounded-xl absolute right-3 bottom-0 p-4 pr-8 flex flex-col gap-5">
           <div className="self-end">
-            {verified && 
+            {verified ? 
               <div className="flex gap-1 items-center">
                 <VerifiedIcon color={{ firstColor: '#D06293' }} width={18} height={18} />
                 <p className="text-xs text-[#AAAAAA] leading-none">Verificado</p>
-              </div>}
+              </div> : 
+              <div className="h-[18px]"></div>
+              }
           </div>
           <div className="flex flex-col gap-1.5">
             <p className="capitalize font-semibold text-sm">{name}</p>
