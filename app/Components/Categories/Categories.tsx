@@ -39,7 +39,7 @@ const Categories = () => {
       <h2>Categorías</h2>
       <div className="w-[10000px]">
         <div className="flex gap-4 w-fit first:m-0">
-          {categories.map(({ name, svg }) => <Category key={'category-' + name} name={name} active={name === selectedCategory} SvgComponent={svg} handleCategory={handleCategory}/>)}
+          {categories.map(({ name, svg }, index) => <Category key={'category-' + name} id={index} name={name} active={name === selectedCategory} SvgComponent={svg} handleCategory={handleCategory}/>)}
         </div>
       </div>
 

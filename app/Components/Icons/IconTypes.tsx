@@ -6,5 +6,6 @@ type Color = {
 export type IconProps = {
   color: Color,
   width: number,
-  height: number
+  height: number,
+  id?: number
 }
