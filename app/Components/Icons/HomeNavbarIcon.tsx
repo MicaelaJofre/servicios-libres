@@ -4,18 +4,12 @@ function HomeNavbar({ color, width, height }: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 500 500"
       width={width}
       height={height}
+      fill={color.firstColor}
+      viewBox="0 0 24 24"
     >
-      <path
-        fill={color.firstColor}
-        d="M134.124 271.897c-26.342 182.367 225.302 182.585 200.729 1.825l-200.729-1.825z"
-      ></path>
-      <path
-        fill={color.firstColor}
-        d="M222.414 144.955q9.353-10.036 19.089 0L361.11 268.249q9.735 10.036-9.354 10.036H117.233q-19.089 0-9.735-10.036z"
-      ></path>
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5z"></path>
     </svg>
   )
 }
