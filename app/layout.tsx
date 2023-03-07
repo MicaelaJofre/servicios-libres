@@ -4,6 +4,7 @@ import Notifications from './Components/Notifications'
 import './globals.css'
 
 import { Poppins } from 'next/font/google'
+import Menu from './Components/Menu/Menu'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -22,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" className={poppins.className}>
-      <body className="h-full max-w-md w-full bg-gray-100 rounded-xl mx-auto p-4 flex flex-col gap-6">
+      <body className="h-full max-w-md w-full bg-gray-100 rounded-xl mx-auto p-4 flex flex-col gap-6 relative">
         <header className="w-full flex justify-between items-center">
           <Avatar img="/images/avatar-placeholder.png" text="Logueate..." />
           <nav className="flex gap-2">
@@ -34,6 +35,7 @@ export default function RootLayout({
             />
           </nav>
         </header>
+        <Menu />
         {children}
       </body>
     </html>
