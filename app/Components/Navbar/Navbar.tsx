@@ -6,78 +6,63 @@ import BubbleNavIcon from '../Icons/BubbleNavIcon'
 import HomeNavbarIcon from '../Icons/HomeNavbarIcon'
 import LookNavIcon from '../Icons/LookNavIcon'
 import MailboxNavIcon from '../Icons/MailboxNavIcon'
+import NavIcons from './NavIcons'
+
+const iconsNav = [
+  {
+    name: 'home',
+    svg: HomeNavbarIcon
+  },
+  {
+    name: 'look',
+    svg: LookNavIcon
+  },
+  {
+    name: 'mailbox',
+    svg: MailboxNavIcon
+  },
+  {
+    name: 'account',
+    svg: AccountNavIcon
+  }
+]
 
 function Navbar() {
   const [selectAnimation, setSelectAnimation] = useState('')
+  const [selectedIcons, setSelectedIcons] = useState('home')
 
-  const handleAnimation = (num: number) => {
-    if (num === 1) return setSelectAnimation('translate-x-[10px]')
-    if (num === 2) return setSelectAnimation('translate-x-[110px]')
-    if (num === 3) return setSelectAnimation('translate-x-[200px]')
-    if (num === 4) return setSelectAnimation('translate-x-[295px]')
+  const handleIcons = (name: string) => {
+    setSelectedIcons(name)
+
+    if (name === 'home') return setSelectAnimation('translate-x-[0px]')
+    if (name === 'look') return setSelectAnimation('translate-x-[92px]')
+    if (name === 'mailbox') return setSelectAnimation('translate-x-[190px]')
+    if (name === 'account') return setSelectAnimation('translate-x-[285px]')
   }
 
   return (
     <section className="rounded-tl-3xl rounded-tr-3xl bg-white tex w-full h-24 relative overflow-hidden">
       <div className="h-2/3 flex justify-evenly items-center relative z-20">
-        <div
-          onClick={() => {
-            handleAnimation(1)
-          }}
-        >
-          <HomeNavbarIcon
-            width={40}
-            height={40}
-            color={{ firstColor: '#FDA63F' }}
+        {iconsNav.map(({ name, svg }, index) => (
+          <NavIcons
+            key={'navIcons-' + name}
+            name={name}
+            active={name === selectedIcons}
+            SvgComponent={svg}
+            handleIcons={handleIcons}
           />
-        </div>
-        <div
-          onClick={() => {
-            handleAnimation(2)
-          }}
-        >
-          <LookNavIcon
-            width={25}
-            height={25}
-            color={{ firstColor: '#FDA63F' }}
-          />
-        </div>
-        <div
-          onClick={() => {
-            handleAnimation(3)
-          }}
-        >
-          <MailboxNavIcon
-            width={30}
-            height={30}
-            color={{ firstColor: '#FDA63F' }}
-          />
-        </div>
-        <div
-          onClick={() => {
-            handleAnimation(4)
-          }}
-        >
-          <AccountNavIcon
-            width={30}
-            height={30}
-            color={{ firstColor: '#FDA63F' }}
-          />
-        </div>
+        ))}
       </div>
       <div
-        className={`transition-all duration-500 transform  absolute -bottom-[150px] -left-[70px] ${selectAnimation}`}
+        className={`transition-all duration-500 transform  absolute -bottom-[150px] -left-[60px] ${selectAnimation}`}
       >
         <BubbleNavIcon
           width={500}
           height={500}
-          color={{ firstColor: '#FDA63F' }}
+          color={{ firstColor: '#DE8011' }}
         />
       </div>
     </section>
   )
 }
-/* ${
-  selectAnimation ? 'translate-x-4' : 'translate-x-16'
-} */
 export default Navbar
