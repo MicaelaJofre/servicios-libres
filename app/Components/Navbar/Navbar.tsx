@@ -41,8 +41,8 @@ function Navbar() {
   }
 
   return (
-    <section className="rounded-tl-3xl rounded-tr-3xl bg-white tex w-full h-24 relative overflow-hidden">
-      <div className="h-2/3 flex justify-evenly items-center relative z-20">
+    <nav className="h-full w-full">
+      <ul className="h-2/3 flex justify-evenly items-center relative z-20">
         {iconsNav.map(({ name, svg }, index) => (
           <NavIcons
             key={'navIcons-' + name}
@@ -52,7 +52,7 @@ function Navbar() {
             handleIcons={handleIcons}
           />
         ))}
-      </div>
+      </ul>
       <div
         className={`transition-all duration-500 transform  absolute -bottom-[150px] -left-[60px] ${selectAnimation}`}
       >
@@ -62,7 +62,7 @@ function Navbar() {
           color={{ firstColor: '#DE8011' }}
         />
       </div>
-    </section>
+    </nav>
   )
 }
 export default Navbar
