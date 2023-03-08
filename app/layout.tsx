@@ -4,7 +4,6 @@ import Notifications from './Components/Notifications'
 import './globals.css'
 
 import { Poppins } from 'next/font/google'
-import Menu from './Components/Menu/Menu'
 import Navbar from './Components/Navbar/Navbar'
 
 const poppins = Poppins({
@@ -40,7 +39,7 @@ export default function RootLayout({
               />
             </div>
           </div>
-          <Menu />
+          {/* <Menu /> */}
           {children}
         </div>
       </body>
