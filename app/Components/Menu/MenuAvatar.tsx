@@ -1,16 +1,23 @@
-import Image from "next/image"
-import Link from "next/link"
+import Image from 'next/image'
+import Link from 'next/link'
 
 const MenuAvatar = () => {
   return (
-    <section className="p-1 border border-orange-light rounded-xl flex gap-2">
-      <div className="rounded-xl h-fit overflow-hidden">
-        <Image src='/images/avatar-placeholder.png' alt='avatar image' width={64} height={64}/>
+    <section className="p-2 border border-orange-light rounded-2xl flex gap-2">
+      <div className="rounded-2xl h-fit overflow-hidden">
+        <Image
+          src="/images/avatar-placeholder.png"
+          alt="avatar image"
+          width={68}
+          height={68}
+        />
       </div>
-      <div className="flex flex-col justify-center">
-        <p className="text-lg font-bold">Jimmy Sulivan</p>
-        <p className="text-gray-300 text-xs">placeholder@gmail.com</p>
-        <Link href='/' className="text-sm text-blue-600 font-semibold">Edit</Link>
+      <div className="flex flex-col justify-between py-1">
+        <p className="font-bold leading-4">Jimmy Sulivan</p>
+        <p className="text-gray-400 text-xs leading-4">placeholder@gmail.com</p>
+        <Link href="/" className="text-sm text-blue-500 font-semibold leading-4 underline">
+          Edit
+        </Link>
       </div>
     </section>
   )
