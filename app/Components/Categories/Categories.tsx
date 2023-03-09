@@ -7,11 +7,25 @@ import PaintIcon from '../Icons/PaintIcon'
 import Category from './Category'
 import FeaturedWorker from './FeaturedWorker'
 
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 const categories = [
   {
     name: 'limpieza',
     svg: Electrician,
     featured: [
+      {
+        name: 'James Winston',
+        image: '/images/workers/james-winston.jpeg',
+        verified: true,
+        rate: {
+          average: 3.2,
+          quantity: 126
+        },
+        price: 45
+      },
       {
         name: 'Liya James',
         image: '/images/workers/liya-james.jpeg',
@@ -23,7 +37,7 @@ const categories = [
         price: 32
       },
       {
-        name: 'James Winston',
+        name: 'Jhon Smith',
         image: '/images/workers/james-winston.jpeg',
         verified: true,
         rate: {
@@ -77,6 +91,14 @@ const categories = [
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState('limpieza')
 
+  const settings = {
+    dots: false,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4.5,
+    slidesToScroll: 4.5
+  }
+
   const handleCategory = (name: string) => {
     setSelectedCategory(name)
   }
@@ -84,8 +106,8 @@ const Categories = () => {
     <>
       <section className="flex flex-col gap-6">
         <h2>Categorías</h2>
-        <div className="w-[10000px]">
-          <div className="flex gap-4 w-fit first:m-0">
+        <div>
+          <Slider {...settings}>
             {categories.map(({ name, svg }, index) => (
               <Category
                 key={'category-' + name}
@@ -96,7 +118,7 @@ const Categories = () => {
                 handleCategory={handleCategory}
               />
             ))}
-          </div>
+          </Slider>
         </div>
       </section>
       <section className="flex flex-col gap-6">
@@ -109,14 +131,20 @@ const Categories = () => {
             Ver todo
           </Link>
         </div>
-        <div className="w-[10000px]">
-          <div className="flex gap-6">
+        <div>
+          <Slider
+            dots={false}
+            infinite={false}
+            speed={500}
+            slidesToShow={1.5}
+            slidesToScroll={1.5}
+          >
             {categories
               .find(({ name }) => name === selectedCategory)
               ?.featured?.map((worker) => (
                 <FeaturedWorker key={worker.name + '-featured'} {...worker} />
               ))}
-          </div>
+          </Slider>
         </div>
       </section>
     </>
