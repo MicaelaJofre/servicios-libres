@@ -43,7 +43,7 @@ function Navbar() {
   return (
     <nav className="h-full w-full">
       <ul className="h-2/3 flex justify-evenly items-center relative z-20">
-        {iconsNav.map(({ name, svg }, index) => (
+        {iconsNav.map(({ name, svg }) => (
           <NavIcons
             key={'navIcons-' + name}
             name={name}
