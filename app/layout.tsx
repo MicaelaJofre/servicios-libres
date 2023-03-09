@@ -4,7 +4,6 @@ import Notifications from './Components/Notifications'
 import './globals.css'
 
 import { Poppins } from 'next/font/google'
-import { MenuProvider } from './context/menu'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -35,7 +34,7 @@ export default function RootLayout({
             />
           </nav>
         </header>
-        <MenuProvider>{children}</MenuProvider>
+        {children}
       </body>
     </html>
   )

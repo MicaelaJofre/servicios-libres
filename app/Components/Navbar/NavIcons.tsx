@@ -13,13 +13,13 @@ const NavIcons = ({ name, active, SvgComponent, handleIcons }: Props) => {
   }
 
   return (
-    <div onClick={handleClick}>
+    <li onClick={handleClick}>
       <SvgComponent
         width={30}
         height={30}
         color={{ firstColor: active ? '#DE8011' : '#EEEDEF' }}
       />
-    </div>
+    </li>
   )
 }
 
