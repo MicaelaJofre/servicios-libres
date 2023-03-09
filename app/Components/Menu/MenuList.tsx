@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { MenuContext } from '@/app/context/menu'
+import { useContext, useState } from 'react'
 import GearIcon from '../Icons/GearIcon'
 import HearthIcon from '../Icons/HearthIcon'
 import TermsAndConditionsIcon from '../Icons/TermsAndConditionsIcon'
@@ -23,8 +24,11 @@ const items = [
 
 const MenuList = () => {
   const [selected, setSelected] = useState('favoritos')
+  const { toggleMenu } = useContext(MenuContext)
+
   const handleClick = ({ name }: { name: string }) => {
     setSelected(name)
+    toggleMenu()
   }
 
   return (
