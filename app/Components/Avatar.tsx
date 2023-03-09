@@ -1,4 +1,8 @@
+'use client'
+
 import Image from 'next/image'
+import { useContext } from 'react'
+import { MenuContext } from '../context/menu'
 
 type Props = {
   img: string
@@ -6,6 +10,8 @@ type Props = {
 }
 
 const Avatar = ({ img, text }: Props) => {
+  const { toggleMenu } = useContext(MenuContext)
+
   return (
     <div className="flex gap-2">
       <div className="rounded-2xl border flex items-center justify-center p-0.5 cursor-pointer">
@@ -15,6 +21,7 @@ const Avatar = ({ img, text }: Props) => {
           alt="profile-image"
           width={54}
           height={54}
+          onClick={toggleMenu}
         ></Image>
       </div>
       <div className="flex flex-col justify-center">

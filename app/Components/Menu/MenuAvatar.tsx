@@ -1,10 +1,13 @@
+import { MenuContext } from '@/app/context/menu'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useContext } from 'react'
 
 const MenuAvatar = () => {
+  const { toggleMenu } = useContext(MenuContext)
   return (
     <section className="p-2 border border-orange-light rounded-2xl flex gap-2">
-      <div className="rounded-2xl h-fit overflow-hidden">
+      <div className="rounded-2xl h-fit overflow-hidden cursor-pointer" onClick={toggleMenu}>
         <Image
           src="/images/avatar-placeholder.png"
           alt="avatar image"
