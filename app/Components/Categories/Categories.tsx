@@ -6,10 +6,9 @@ import Electrician from '../Icons/ElectricianIcon'
 import PaintIcon from '../Icons/PaintIcon'
 import Category from './Category'
 import FeaturedWorker from './FeaturedWorker'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+import 'swiper/swiper.css'
 
 const categories = [
   {
@@ -91,34 +90,49 @@ const categories = [
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState('limpieza')
 
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4.5,
-    slidesToScroll: 4.5
-  }
-
   const handleCategory = (name: string) => {
     setSelectedCategory(name)
   }
   return (
     <>
-      <section className="flex flex-col gap-6">
+      <section className="flex flex-col gap-6 relative">
         <h2>Categorías</h2>
-        <div>
-          <Slider {...settings}>
+        <div className="relative">
+          <Swiper
+            slidesPerView={4.5}
+            spaceBetween={90}
+            className="mySwiper"
+            breakpoints={{
+              400: {
+                slidesPerView: 4.5,
+                spaceBetween: 20
+              },
+              768: {
+                slidesPerView: 12,
+                spaceBetween: 20
+              },
+              1024: {
+                slidesPerView: 20,
+                spaceBetween: 20
+              },
+              1775: {
+                slidesPerView: 35,
+                spaceBetween: 0
+              }
+            }}
+          >
             {categories.map(({ name, svg }, index) => (
-              <Category
-                key={'category-' + name}
-                id={index}
-                name={name}
-                active={name === selectedCategory}
-                SvgComponent={svg}
-                handleCategory={handleCategory}
-              />
+              <SwiperSlide key={'category-' + name} className="flex pb-5">
+                <Category
+                  id={index}
+                  name={name}
+                  active={name === selectedCategory}
+                  SvgComponent={svg}
+                  handleCategory={handleCategory}
+                />
+              </SwiperSlide>
             ))}
-          </Slider>
+          </Swiper>
         </div>
       </section>
       <section className="flex flex-col gap-6">
@@ -131,21 +145,37 @@ const Categories = () => {
             Ver todo
           </Link>
         </div>
-        <div>
-          <Slider
-            dots={false}
-            infinite={false}
-            speed={500}
-            slidesToShow={1.5}
-            slidesToScroll={1.5}
-          >
-            {categories
-              .find(({ name }) => name === selectedCategory)
-              ?.featured?.map((worker) => (
-                <FeaturedWorker key={worker.name + '-featured'} {...worker} />
-              ))}
-          </Slider>
-        </div>
+        <Swiper
+          slidesPerView={1.5}
+          spaceBetween={10}
+          className="mySwiper"
+          breakpoints={{
+            640: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            1024: {
+              slidesPerView: 2,
+              spaceBetween: 20
+            },
+            1775: {
+              slidesPerView: 2,
+              spaceBetween: 0
+            }
+          }}
+        >
+          {categories
+            .find(({ name }) => name === selectedCategory)
+            ?.featured?.map((worker) => (
+              <SwiperSlide key={worker.name + '-featured'}>
+                <FeaturedWorker {...worker} />
+              </SwiperSlide>
+            ))}
+        </Swiper>
       </section>
     </>
   )

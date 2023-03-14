@@ -43,13 +43,13 @@ const setStarColor = (index: number, average: number) => {
 const FeaturedWorker = ({ name, verified, image, rate, price }: Props) => {
   return (
     <div className="w-56 h-44 relative">
-      <div className="rounded-2xl flex items-center justify-center p-1 w-fit bg-white z-10 absolute">
+      <div className="rounded-2xl flex items-center justify-center h-[70px] w-[70px] p-1 bg-white z-10 absolute">
         <Image
-          className="rounded-2xl relative h-[70px] w-[70px] object-cover"
+          className="rounded-2xl relative object-cover"
           src={image}
           alt={name + 'image-profile'}
-          width={256}
-          height={256}
+          width={250}
+          height={250}
         ></Image>
       </div>
       <div className="w-[185px] bg-[#FDFCFD] rounded-xl absolute right-3 bottom-0 p-4 pr-8 flex flex-col gap-5">
