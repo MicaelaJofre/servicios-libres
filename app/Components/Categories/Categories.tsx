@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Electrician from '../Icons/ElectricianIcon'
 import PaintIcon from '../Icons/PaintIcon'
 import Category from './Category'
@@ -89,10 +89,18 @@ const categories = [
 
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState('limpieza')
+  const [reRender, setReRender] = useState(false)
 
   const handleCategory = (name: string) => {
     setSelectedCategory(name)
+    setReRender(true)
   }
+
+  useEffect(() => {
+    if (!reRender) return
+    setReRender(false)
+  }, [reRender])
+
   return (
     <>
       <section className="flex flex-col gap-6 relative">
@@ -124,25 +132,29 @@ const Categories = () => {
             Ver todo
           </Link>
         </div>
-        <Swiper
-          className="overflow-visible"
-          slidesPerView={1.2}
-          spaceBetween={20}
-          breakpoints={{
-            400: {
-              slidesPerView: 1.5,
-              spaceBetween: 20
-            }
-          }}
-        >
-          {categories
-            .find(({ name }) => name === selectedCategory)
-            ?.featured?.map((worker) => (
-              <SwiperSlide key={worker.name + '-featured'}>
-                <FeaturedWorker {...worker} />
-              </SwiperSlide>
-            ))}
-        </Swiper>
+        {!reRender ? (
+          <Swiper
+            className="overflow-visible"
+            slidesPerView={1.4}
+            spaceBetween={20}
+            breakpoints={{
+              400: {
+                slidesPerView: 1.8,
+                spaceBetween: 20
+              }
+            }}
+          >
+            {categories
+              .find(({ name }) => name === selectedCategory)
+              ?.featured?.map((worker) => (
+                <SwiperSlide key={worker.name + '-featured'}>
+                  <FeaturedWorker {...worker} />
+                </SwiperSlide>
+              ))}
+          </Swiper>
+        ) : (
+          <div className="h-44"></div>
+        )}
       </section>
     </>
   )
