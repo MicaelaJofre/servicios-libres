@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import Electrician from '../Icons/ElectricianIcon'
-import PaintIcon from '../Icons/PaintIcon'
+import Electrician from '@icons/ElectricianIcon'
+import PaintIcon from '@icons/PaintIcon'
 import Category from './Category'
 import FeaturedWorker from './FeaturedWorker'
 import { Swiper, SwiperSlide } from 'swiper/react'

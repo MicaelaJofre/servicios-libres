@@ -1,6 +1,6 @@
 import Image from 'next/image'
-import StarIcon from '../Icons/StarIcon'
-import VerifiedIcon from '../Icons/VerifiedIcon'
+import StarIcon from '@icons/StarIcon'
+import VerifiedIcon from '@icons/VerifiedIcon'
 
 type Rate = {
   average: number
@@ -44,23 +44,13 @@ const FeaturedWorker = ({ name, verified, image, rate, price }: Props) => {
   return (
     <div className="w-56 h-44 relative">
       <div className="rounded-2xl flex items-center justify-center h-[70px] w-[70px] p-1 bg-white z-10 absolute">
-        <Image
-          className="rounded-2xl relative object-cover"
-          src={image}
-          alt={name + 'image-profile'}
-          width={250}
-          height={250}
-        ></Image>
+        <Image className="rounded-2xl relative object-cover" src={image} alt={name + 'image-profile'} width={250} height={250}></Image>
       </div>
       <div className="w-[185px] bg-[#FDFCFD] rounded-xl absolute right-3 bottom-0 p-4 pr-8 flex flex-col gap-5">
         <div className="self-end">
           {verified ? (
             <div className="flex gap-1 items-center">
-              <VerifiedIcon
-                color={{ firstColor: '#D06293' }}
-                width={18}
-                height={18}
-              />
+              <VerifiedIcon color={{ firstColor: '#D06293' }} width={18} height={18} />
               <p className="text-xs text-[#AAAAAA] leading-none">Verificado</p>
             </div>
           ) : (
@@ -74,17 +64,10 @@ const FeaturedWorker = ({ name, verified, image, rate, price }: Props) => {
               {Array(5)
                 .fill(0)
                 .map((_, index) => (
-                  <StarIcon
-                    key={name + '-star-' + index}
-                    width={14}
-                    height={14}
-                    color={setStarColor(index + 1, rate.average)}
-                  />
+                  <StarIcon key={name + '-star-' + index} width={14} height={14} color={setStarColor(index + 1, rate.average)} />
                 ))}
             </div>
-            <span className="text-xs text-[#AAAAAA] leading-3">
-              ({rate.quantity})
-            </span>
+            <span className="text-xs text-[#AAAAAA] leading-3">({rate.quantity})</span>
           </div>
           <p className="text-sm font-semibold text-orange-light">${price}/hr</p>
         </div>

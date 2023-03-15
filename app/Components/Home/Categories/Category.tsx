@@ -1,4 +1,4 @@
-import { IconProps } from '../Icons/IconTypes'
+import { IconProps } from '@icons/IconTypes'
 
 type Props = {
   id: number
@@ -8,27 +8,16 @@ type Props = {
   handleCategory: (name: string) => void
 }
 
-const Category = ({
-  id,
-  name,
-  active,
-  SvgComponent,
-  handleCategory
-}: Props) => {
+const Category = ({ id, name, active, SvgComponent, handleCategory }: Props) => {
   const handleClick = () => {
     handleCategory(name)
   }
 
   return (
-    <div
-      className="cursor-pointer flex flex-col items-center w-[75px] gap-3"
-      onClick={handleClick}
-    >
+    <div className="cursor-pointer flex flex-col items-center w-[75px] gap-3" onClick={handleClick}>
       <div
         className={`w-[75px] h-[75px] shadow-lg rounded-full flex items-center relative justify-center bg-orange-gradient after:absolute after:duration-500 after:-left-[1px] after:-top-[1px] after:-bottom-[1px] after:-right-[1px] after:rounded-full after:bg-[#EEEDEF] after:opacity-0 after:transition-all transition-all duration-500 ${
-          !active
-            ? 'after:opacity-100 shadow-gray-800/10'
-            : 'shadow-[#FFC37B]/60'
+          !active ? 'after:opacity-100 shadow-gray-800/10' : 'shadow-[#FFC37B]/60'
         }`}
       >
         <SvgComponent

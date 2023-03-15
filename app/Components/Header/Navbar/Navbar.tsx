@@ -1,11 +1,11 @@
 'use client'
 
 import { useRef } from 'react'
-import AccountNavIcon from '../Icons/AccountNavIcon'
-import BubbleNavIcon from '../Icons/BubbleNavIcon'
-import HomeNavbarIcon from '../Icons/HomeNavbarIcon'
-import LookNavIcon from '../Icons/LookNavIcon'
-import MailboxNavIcon from '../Icons/MailboxNavIcon'
+import AccountNavIcon from '@icons/AccountNavIcon'
+import BubbleNavIcon from '@icons/BubbleNavIcon'
+import HomeNavbarIcon from '@icons/HomeNavbarIcon'
+import LookNavIcon from '@icons/LookNavIcon'
+import MailboxNavIcon from '@icons/MailboxNavIcon'
 import { useBubbleStyle } from './hooks/useBubbleStyle'
 import NavIcons from './NavIcons'
 
@@ -40,7 +40,7 @@ function Navbar() {
         ))}
       </ul>
       <div className="transition-all duration-500 absolute left-0 -bottom-[100px]" style={styles}>
-        <BubbleNavIcon width={widthOfbubble} height={widthOfbubble} color={{ firstColor: '#DE8011' }} />
+        <BubbleNavIcon width={widthOfbubble} height={widthOfbubble} color={{ firstColor: '#FF6A76' }} />
       </div>
     </nav>
   )

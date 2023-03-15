@@ -1,15 +1,13 @@
-import Categories from './Components/Categories/Categories'
-import Featured from './Components/FeaturedContent/Featured'
-import SearchBar from './Components/SearchBar'
+import Categories from './Components/Home/Categories/Categories'
+import Featured from './Components/Home/FeaturedContent/Featured'
+import HomeHeader from './Components/Home/HomeHeader/HomeHeader'
 
 export default function Home() {
   return (
     <>
-      <main className="flex flex-col gap-8 p-4 relative">
-        <SearchBar />
-        <Featured />
-        <Categories />
-      </main>
+      <HomeHeader />
+      <Featured />
+      <Categories />
     </>
   )
 }

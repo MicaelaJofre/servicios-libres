@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import BellIcon from './Icons/BellIcon'
+import BellIcon from '@icons/BellIcon'
 
 const Notifications = () => {
   const [notifications, setNotifications] = useState<string[]>([])

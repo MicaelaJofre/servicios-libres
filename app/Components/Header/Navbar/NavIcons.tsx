@@ -1,4 +1,4 @@
-import { IconProps } from '../Icons/IconTypes'
+import { IconProps } from '@icons/IconTypes'
 
 type Props = {
   index: number
@@ -15,7 +15,7 @@ const NavIcons = ({ index, name, active, SvgComponent, handleIcons }: Props) => 
 
   return (
     <li onClick={handleClick}>
-      <SvgComponent width={30} height={30} color={{ firstColor: active ? '#DE8011' : '#EEEDEF' }} />
+      <SvgComponent width={30} height={30} color={{ firstColor: active ? '#FF6A76' : '#EEEDEF' }} />
     </li>
   )
 }
