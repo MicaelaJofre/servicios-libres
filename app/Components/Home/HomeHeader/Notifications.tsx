@@ -19,7 +19,7 @@ const Notifications = () => {
             : ''
         }
       >
-        <BellIcon width={20} height={20} color={{ firstColor: '#888' }} />
+        <BellIcon width={24} height={24} color={{ firstColor: '#888' }} />
       </div>
     </div>
   )
